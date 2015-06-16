@@ -16,16 +16,6 @@ The Qt Quick Controls module provides a set of controls that can be
 used to build complete interfaces in Qt Quick.
 
 
-%package controls
-Summary:    QtQuick Controls module
-Group:      System/Libraries
-Requires:       %{name}-layouts = %{version}-%{release}
-
-%description controls
-The Qt Quick Controls module provides a set of controls that can be
-used to build complete interfaces in Qt Quick.
-
-
 %package layouts
 Summary:    QtQuick Layouts module
 Group:      System/Libraries
@@ -57,11 +47,6 @@ rm -rf %{buildroot}
 
 #### Pre/Post section
 
-%post controls
-/sbin/ldconfig
-%postun
-/sbin/ldconfig
-
 %post layouts
 /sbin/ldconfig
 %postun layouts
@@ -72,10 +57,6 @@ rm -rf %{buildroot}
 
 #### File section
 
-
-%files controls
-%defattr(-,root,root,-)
-%{_libdir}/qt5/qml/QtQuick/Controls/*
 
 %files layouts
 %defattr(-,root,root,-)

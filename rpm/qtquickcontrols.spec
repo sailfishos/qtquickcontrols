@@ -16,6 +16,24 @@ The Qt Quick Controls module provides a set of controls that can be
 used to build complete interfaces in Qt Quick.
 
 
+%package controls
+Summary:    QtQuick Controls module
+Group:      System/Libraries
+Requires:       %{name}-layouts = %{version}-%{release}
+
+%description controls
+The Qt Quick Controls module provides a set of controls that can be
+used to build complete interfaces in Qt Quick.
+
+
+%package layouts
+Summary:    QtQuick Layouts module
+Group:      System/Libraries
+
+%description layouts
+The Qt Quick Layouts are a set of QML types used to arrange items in
+an user interface. In contrast to positioners, Qt Quick Layouts can
+also resize their items.
 
 
 #### Build section
@@ -39,9 +57,14 @@ rm -rf %{buildroot}
 
 #### Pre/Post section
 
-%post
+%post controls
 /sbin/ldconfig
 %postun
+/sbin/ldconfig
+
+%post layouts
+/sbin/ldconfig
+%postun layouts
 /sbin/ldconfig
 
 
@@ -50,10 +73,13 @@ rm -rf %{buildroot}
 #### File section
 
 
-%files
+%files controls
+%defattr(-,root,root,-)
+%{_libdir}/qt5/qml/QtQuick/Controls/*
+
+%files layouts
 %defattr(-,root,root,-)
 %{_libdir}/qt5/qml/QtQuick/Layouts/*
-%{_libdir}/qt5/qml/QtQuick/Controls/*
 
 
 

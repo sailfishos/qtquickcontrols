@@ -25,9 +25,6 @@ The Qt Quick Layouts are a set of QML types used to arrange items in
 an user interface. In contrast to positioners, Qt Quick Layouts can
 also resize their items.
 
-
-#### Build section
-
 %prep
 %setup -q -n %{name}-%{version}
 
@@ -42,27 +39,12 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 %qmake5_install
 
-
-
-
-#### Pre/Post section
-
 %post layouts
 /sbin/ldconfig
 %postun layouts
 /sbin/ldconfig
 
-
-
-
-#### File section
-
-
 %files layouts
 %defattr(-,root,root,-)
 %{_libdir}/qt5/qml/QtQuick/Layouts/*
 
-
-
-
-#### No changelog section, separate $pkg.changelog contains the history

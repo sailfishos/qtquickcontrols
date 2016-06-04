@@ -53,7 +53,7 @@ class QQuickLayoutAttached;
 #if 0 && !defined(QT_NO_DEBUG) && !defined(QT_NO_DEBUG_OUTPUT)
 # define quickLayoutDebug QMessageLogger(__FILE__, __LINE__, Q_FUNC_INFO).debug
 #else
-# define quickLayoutDebug QT_NO_QWARNING_MACRO
+# define quickLayoutDebug qDebug
 #endif
 
 class QQuickLayoutPrivate;

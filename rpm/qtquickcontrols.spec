@@ -2,8 +2,7 @@ Name:       qt5-qtquickcontrols
 Summary:    QtQuick Controls library
 Version:    5.2.1
 Release:    1%{?dist}
-Group:      System/Libraries
-License:    LGPLv2.1 with exception or GPLv3
+License:    LGPLv2 with exception or GPLv3 or Qt Commercial
 URL:        https://www.qt.io
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -18,7 +17,6 @@ used to build complete interfaces in Qt Quick.
 
 %package layouts
 Summary:    QtQuick Layouts module
-Group:      System/Libraries
 
 %description layouts
 The Qt Quick Layouts are a set of QML types used to arrange items in
@@ -46,5 +44,8 @@ rm -rf %{buildroot}
 
 %files layouts
 %defattr(-,root,root,-)
+%license LICENSE.LGPL
+%license LGPL_EXCEPTION.txt
+%license LICENSE.GPL
 %{_libdir}/qt5/qml/QtQuick/Layouts/*
 
